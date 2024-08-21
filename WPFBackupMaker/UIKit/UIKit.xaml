@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Include UI Atoms, Molecules, ... -->
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Atoms -->
+        <ResourceDictionary Source="Atoms/UIButtons.xaml"/>
+        <ResourceDictionary Source="Atoms/UIProgressBar.xaml"/>
+        <!-- Organisms -->
+        <!--<ResourceDictionary Source="Organisms/UIHeader.xaml"/>-->
+        <!--<ResourceDictionary Source="UIAtoms/UITextBlocks.xaml"/>-->
+        <!--<ResourceDictionary Source="UIMolecules.xaml"/>
+        <ResourceDictionary Source="UIBasics.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WPFBackupMaker.UIKit.UIHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:WPFBackupMaker.UIKit"
+             mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <sys:Double x:Key="Header.Height">70</sys:Double>
+        <SolidColorBrush x:Key="Header.Background" Color="{StaticResource PrimaryColor}"/>
+        <SolidColorBrush x:Key="Header.Foreground" Color="{StaticResource Shade0Color}"/>
+        <Thickness x:Key="Header.Padding">20, 8</Thickness>
+        <DropShadowEffect x:Key="Header.Bottom.Shadow" BlurRadius="10" Direction="270" ShadowDepth="1" Color="{StaticResource Shade700Color}"/>
+    </UserControl.Resources>
+    <Grid Height="{StaticResource Header.Height}" Width="Auto" Background="{StaticResource Header.Background}" Effect="{StaticResource Header.Bottom.Shadow}">
+        <Grid Margin="{StaticResource Header.Padding}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <TextBlock  Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:UIHeader}}, Mode=Default, Path=HeaderText}"
+                   FontSize="{StaticResource FontSizeTitle}" Foreground="{StaticResource Header.Foreground}" VerticalAlignment="Center"/>
+            </StackPanel>
+            <!-- Add the content (HeaderContent) -->
+            <ContentControl Grid.Column="1" Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:UIHeader}}, Path=HeaderContent}" />
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <!-- Include UIColors, UIColorBrushes, .... -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="UIColors.xaml"/>
+        <ResourceDictionary Source="UIFonts.xaml"/>
+        <!--<ResourceDictionary Source="UIColorBrushes.xaml"/>
+        <ResourceDictionary Source="UIBasics.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

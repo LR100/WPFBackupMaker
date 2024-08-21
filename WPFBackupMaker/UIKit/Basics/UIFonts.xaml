@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Font Sizes -->
+    <sys:Double x:Key="FontSizeExtraSmall">10</sys:Double>
+    <sys:Double x:Key="FontSizeSmall">12</sys:Double>
+    <sys:Double x:Key="FontSizeMedium">14</sys:Double>
+    <sys:Double x:Key="FontSizeLarge">18</sys:Double>
+    <sys:Double x:Key="FontSizeExtraLarge">24</sys:Double>
+    <sys:Double x:Key="FontSizeTitle">32</sys:Double>
+    <sys:Double x:Key="FontSizeHeadline">40</sys:Double>
+    <sys:Double x:Key="FontSizeDisplay">48</sys:Double>
+    
+    <!-- Buttons Font Sizes -->
+    <sys:Double x:Key="ButtonFontSizeExtraSmall">10</sys:Double>
+    <sys:Double x:Key="ButtonFontSizeSmall">12</sys:Double>
+    <sys:Double x:Key="ButtonFontSizeMedium">18</sys:Double>
+    <sys:Double x:Key="ButtonFontSizeLarge">22</sys:Double>
+    <sys:Double x:Key="ButtonFontSizeExtraLarge">24</sys:Double>
+
+</ResourceDictionary>

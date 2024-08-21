@@ -1,0 +1,31 @@
+﻿<Window x:Class="BackupMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="clr-namespace:WPFBackupMaker.UIKit"
+        xmlns:core="clr-namespace:WPFBackupMaker.Core"
+        xmlns:local="clr-namespace:BackupMaker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <DockPanel>
+        <ui:UIHeader DockPanel.Dock="Top" HeaderText="{Binding Source={x:Static core:AppInfo.AppName}}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock/>
+            </StackPanel>
+        </ui:UIHeader>
+        <Grid Margin="20, 20, 20, 10">
+            <WrapPanel>
+                <Button Style="{StaticResource ButtonPrimaryStyle}" Content="Button" Margin="5"/>
+                <Button Style="{StaticResource ButtonPrimaryStyle}" Content="Disabled" IsEnabled="False" Margin="5"/>
+                <Button Style="{StaticResource ButtonSuccessStyle}" Content="Validate" Margin="5"/>
+                <Button Style="{StaticResource ButtonWarningStyle}" Content="Warning" Margin="5"/>
+                <Button Style="{StaticResource ButtonDangerStyle}" Content="Danger" Margin="5"/>
+            </WrapPanel>
+            <ProgressBar Template="{DynamicResource ProgressBarTemplate}" Style="{StaticResource ProgressBarStyle}" Value="50" Margin="0, 20, 0, 0" IsIndeterminate="True"/>
+        </Grid>
+    </DockPanel>
+</Window>
