@@ -9,15 +9,17 @@
         <ResourceDictionary Source="../Basics/UIBasics.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- Resources -->
     <sys:Double x:Key="ProgressBar.Height">26</sys:Double>
     <SolidColorBrush x:Key="ProgressBar.Foreground" Color="{StaticResource SuccessColor}"/>
     <SolidColorBrush x:Key="ProgressBar.Background" Color="{StaticResource Shade200Color}"/>
     <SolidColorBrush x:Key="ProgressBar.BorderBrush" Color="{StaticResource Shade600Color}"/>
     <Thickness x:Key="ProgressBar.BorderThickness">1.5</Thickness>
     <sys:Double x:Key="ProgressBar.CornerRadiusValue">5</sys:Double>
+    <sys:Double x:Key="ProgressBar.Indicator.CornerRadiusValue">3.5</sys:Double>
     <CornerRadius x:Key="ProgressBar.CornerRadius" TopLeft="{StaticResource ProgressBar.CornerRadiusValue}" TopRight="{StaticResource ProgressBar.CornerRadiusValue}"
                   BottomLeft="{StaticResource ProgressBar.CornerRadiusValue}" BottomRight="{StaticResource ProgressBar.CornerRadiusValue}"/>
-    <!-- Progress Bar -->
+    <!-- Template -->
     <ControlTemplate x:Key="ProgressBarTemplate" TargetType="{x:Type ProgressBar}">
         <Grid x:Name="TemplateRoot">
             <VisualStateManager.VisualStateGroups>
@@ -43,8 +45,8 @@
                     BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{StaticResource ProgressBar.CornerRadius}"/>
             <Rectangle x:Name="PART_Track"/>
             <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" Margin="3.5, 3">
-                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" Stroke="{TemplateBinding Foreground}" RadiusX="5" RadiusY="5"/>
-                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" Stroke="{TemplateBinding Foreground}" RadiusX="5" RadiusY="5">
+                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" Stroke="{TemplateBinding Foreground}" RadiusX="{StaticResource ProgressBar.Indicator.CornerRadiusValue}" RadiusY="{StaticResource ProgressBar.Indicator.CornerRadiusValue}"/>
+                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" Stroke="{TemplateBinding Foreground}" RadiusX="{StaticResource ProgressBar.Indicator.CornerRadiusValue}" RadiusY="{StaticResource ProgressBar.Indicator.CornerRadiusValue}">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -70,8 +72,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-
-    <!-- Progress Bar Style -->
+    <!-- Style -->
     <Style x:Key="ProgressBarStyle" TargetType="{x:Type ProgressBar}">
         <Setter Property="Template" Value="{StaticResource ProgressBarTemplate}"/>
         <Setter Property="Foreground" Value="{StaticResource ProgressBar.Foreground}"/>
@@ -81,5 +82,7 @@
         <Setter Property="Height" Value="{StaticResource ProgressBar.Height}"/>
     </Style>
 
+    <!-- Set Default Style -->
+    <Style TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource ProgressBarStyle}"/>
 
 </ResourceDictionary>

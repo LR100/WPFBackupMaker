@@ -43,7 +43,7 @@
     <!-- Interactive Colors -->
     <Color x:Key="HoverColor">#FF0056B3</Color>
     <Color x:Key="ActiveColor">#FF004085</Color>
-    <Color x:Key="FocusColor">#FF80BDFF</Color>
+    <Color x:Key="FocusColor">#FF2472BE</Color>
 
     <!-- Background Variations -->
     <Color x:Key="LightBackgroundColor">#FFF8F9FA</Color>

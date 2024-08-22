@@ -3,8 +3,14 @@
     <!-- Include UI Atoms, Molecules, ... -->
     <ResourceDictionary.MergedDictionaries>
         <!-- Atoms -->
-        <ResourceDictionary Source="Atoms/UIButtons.xaml"/>
+        <ResourceDictionary Source="Atoms/UIButton.xaml"/>
         <ResourceDictionary Source="Atoms/UIProgressBar.xaml"/>
+        <ResourceDictionary Source="Atoms/UICheckbox.xaml"/>
+        <ResourceDictionary Source="Atoms/UIRadioButton.xaml"/>
+        <ResourceDictionary Source="Atoms/UITextBox.xaml"/>
+        <ResourceDictionary Source="Atoms/UIPasswordBox.xaml"/>
+        <ResourceDictionary Source="Atoms/UIToggleButton.xaml"/>
+        <ResourceDictionary Source="Atoms/UIIconButtonStyle.xaml"/>
         <!-- Organisms -->
         <!--<ResourceDictionary Source="Organisms/UIHeader.xaml"/>-->
         <!--<ResourceDictionary Source="UIAtoms/UITextBlocks.xaml"/>-->
@@ -12,3 +18,4 @@
         <ResourceDictionary Source="UIBasics.xaml"/>-->
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
+    

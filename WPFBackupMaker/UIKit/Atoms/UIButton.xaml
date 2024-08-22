@@ -4,15 +4,13 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- BUTTON BASE TEMPLATE -->
-
     <!-- Include UIBasics.xaml -->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Basics/UIBasics.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <!-- Bases Definition -->
-    <sys:Double x:Key="Button.Height">41</sys:Double>
+    <!-- Resources -->
+    <sys:Double x:Key="Button.Height">40</sys:Double>
     <sys:Double x:Key="Button.Small.Height">30</sys:Double>
     <sys:Double x:Key="Button.Large.Height">60</sys:Double>
 
@@ -28,11 +26,10 @@
     <SolidColorBrush x:Key="Button.Disabled.BorderBrush" Color="{StaticResource DisabledBorderColor}"/>
     <SolidColorBrush x:Key="Button.Disabled.Text.Foreground" Color="{StaticResource DisabledTextColor}"/>
 
-    <!-- Define ColorBrightnessConverter -->
     <uiconverters:ColorBrightnessConverter x:Key="ColorBrightnessConverter"/>
     <uiconverters:DoubleMultiplierConverter x:Key="DoubleMultiplierConverter"/>
 
-
+    <!-- Template -->
     <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type ButtonBase}">
         <Border x:Name="border" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" BorderThickness="{TemplateBinding BorderThickness}" Effect="{StaticResource Button.Shadow}"
                 CornerRadius="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DoubleMultiplierConverter}, ConverterParameter=0.25}">
@@ -84,7 +81,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <!-- Define template for all buttons by default -->
+    <!-- BASE Style -->
     <Style x:Key="ButtonBaseStyle" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="{StaticResource Button.Height}"/>
         <Setter Property="Padding" Value="{StaticResource Button.Padding}"/>
@@ -96,35 +93,34 @@
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Template" Value="{StaticResource ButtonTemplate}"/>
     </Style>
-    <!-- END - BUTTON BASE TEMPLATE -->
-    
-    <!-- PRIMARY STYLE -->
+
+    <!-- PRIMARY Style  -->
     <SolidColorBrush x:Key="ButtonPrimary.Background" Color="{StaticResource PrimaryColor}"/>
     <Style x:Key="ButtonPrimaryStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="{StaticResource ButtonPrimary.Background}"/>
     </Style>
 
-    <!-- Define Primary Style as base style for every button -->
-    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonPrimaryStyle}"></Style>
-    
     <!-- SECONDARY STYLE : TODO -->
-    
-    <!-- SUCCESS STYLE -->
+
+    <!-- SUCCESS Style -->
     <SolidColorBrush x:Key="ButtonSuccess.Background" Color="{StaticResource SuccessColor}"/>
     <Style x:Key="ButtonSuccessStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="{StaticResource ButtonSuccess.Background}"/>
     </Style>
-    
-    <!-- WARNING STYLE -->
+
+    <!-- WARNING Style -->
     <SolidColorBrush x:Key="ButtonWarning.Background" Color="{StaticResource WarningColor}"/>
     <Style x:Key="ButtonWarningStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="{StaticResource ButtonWarning.Background}"/>
     </Style>
     
-    <!-- DANGER STYLE -->
+    <!-- DANGER Style -->
     <SolidColorBrush x:Key="ButtonDanger.Background" Color="{StaticResource DangerColor}"/>
     <Style x:Key="ButtonDangerStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="{StaticResource ButtonDanger.Background}"/>
     </Style>
+
+    <!-- Set Default Style (Primary) -->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonPrimaryStyle}"/>
 
 </ResourceDictionary>

@@ -6,6 +6,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="UIColors.xaml"/>
         <ResourceDictionary Source="UIFonts.xaml"/>
+        <ResourceDictionary Source="UIPaths.xaml"/>
         <!--<ResourceDictionary Source="UIColorBrushes.xaml"/>
         <ResourceDictionary Source="UIBasics.xaml"/>-->
     </ResourceDictionary.MergedDictionaries>

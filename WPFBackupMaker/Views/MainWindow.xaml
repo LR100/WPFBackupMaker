@@ -3,29 +3,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ui="clr-namespace:WPFBackupMaker.UIKit"
+        xmlns:cc="clr-namespace:WPFBackupMaker.UIKit"
         xmlns:core="clr-namespace:WPFBackupMaker.Core"
         xmlns:local="clr-namespace:BackupMaker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Window.Resources>
-        
+
     </Window.Resources>
     <DockPanel>
-        <ui:UIHeader DockPanel.Dock="Top" HeaderText="{Binding Source={x:Static core:AppInfo.AppName}}">
+        <cc:UIHeader DockPanel.Dock="Top" HeaderText="{Binding Source={x:Static core:AppInfo.AppName}}">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <TextBlock/>
             </StackPanel>
-        </ui:UIHeader>
-        <Grid Margin="20, 20, 20, 10">
-            <WrapPanel>
-                <Button Style="{StaticResource ButtonPrimaryStyle}" Content="Button" Margin="5"/>
-                <Button Style="{StaticResource ButtonPrimaryStyle}" Content="Disabled" IsEnabled="False" Margin="5"/>
-                <Button Style="{StaticResource ButtonSuccessStyle}" Content="Validate" Margin="5"/>
-                <Button Style="{StaticResource ButtonWarningStyle}" Content="Warning" Margin="5"/>
-                <Button Style="{StaticResource ButtonDangerStyle}" Content="Danger" Margin="5"/>
-            </WrapPanel>
-            <ProgressBar Template="{DynamicResource ProgressBarTemplate}" Style="{StaticResource ProgressBarStyle}" Value="50" Margin="0, 20, 0, 0" IsIndeterminate="True"/>
+        </cc:UIHeader>
+        <Grid Margin="20, 20, 20, 10" >
+            <StackPanel >
+                <WrapPanel>
+                    <Button Style="{StaticResource ButtonPrimaryStyle}" Content="Button" Margin="5"/>
+                    <Button Style="{StaticResource ButtonPrimaryStyle}" Content="Disabled" IsEnabled="False" Margin="5"/>
+                    <Button Style="{StaticResource ButtonSuccessStyle}" Content="Validate" Margin="5"/>
+                    <Button Style="{StaticResource ButtonWarningStyle}" Content="Warning" Margin="5"/>
+                    <Button Style="{StaticResource ButtonDangerStyle}" Content="Danger" Margin="5"/>
+                </WrapPanel>
+
+                <TextBox Text="TextBox" Margin="0, 20, 0, 0"/>
+                <PasswordBox Password="Password" Margin="0, 20, 0, 0"/>
+                <ProgressBar Value="50" Margin="0, 20, 0, 0" IsIndeterminate="False"/>
+                <CheckBox Content="Checkbox" Margin="0, 10, 0, 0"/>
+                <RadioButton Content="A" GroupName="RadioGroup" Margin="0, 10, 0, 0"/>
+                <RadioButton Content="B" GroupName="RadioGroup" Margin="0, 5, 0, 0"/>
+                <ToggleButton  Margin="0, 10, 0, 0" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal">
+                    <cc:UIIconButton Icon="{StaticResource UIPathPlus}" Margin="0, 10, 0, 0"/>
+                    <cc:UIIconButton Style="{StaticResource IconButtonDangerStyle}" Icon="{StaticResource UIPathMinus}" Margin="5, 10, 0, 0"/>
+                    <cc:UIIconButton Icon="{StaticResource UIPathAddressBook}" Margin="5, 10, 0, 0"/>
+                    <cc:UIIconButton Icon="{StaticResource UIPathSearchGlass}" Margin="5, 10, 0, 0"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>
