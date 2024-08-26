@@ -1,8 +1,6 @@
 ﻿using BackupMaker.Logger;
-using BackupMaker.ViewModels;
-using System.Configuration;
-using System.Data;
 using System.Windows;
+using WPFBackupMaker;
 
 
 namespace BackupMaker

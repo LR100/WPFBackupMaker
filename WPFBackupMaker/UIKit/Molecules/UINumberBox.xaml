@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="WPFBackupMaker.UIKit.UINumberBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:uiconverters="clr-namespace:BackupMaker.UIKit.Converters"
+             xmlns:cc="clr-namespace:WPFBackupMaker.UIKit"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Include UIBasics.xaml -->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Basics/UIBasics.xaml"/>
+                <ResourceDictionary Source="../Atoms/UITextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Resources -->
+            <sys:Double x:Key="NumberBox.Button.Size.Factor">0.7</sys:Double>
+            <Thickness x:Key="NumberBox.Padding">5, 0</Thickness>
+            <Thickness x:Key="NumberBox.Input.Padding">6, 0</Thickness>
+            <uiconverters:DoubleMultiplierConverter x:Key="DoubleMultiplierConverter"/>
+
+            <!-- Template -->
+            <ControlTemplate x:Key="NumberBoxTemplate" TargetType="{x:Type TextBox}">
+                <Grid>
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"
+               CornerRadius="{StaticResource TextBox.CornerRadius}" Margin="3, 0">
+                        <Grid VerticalAlignment="Stretch" Margin="{StaticResource NumberBox.Padding}">
+                            <cc:UIIconRepeatButton x:Name="NumberBoxMinusButton" Content="{StaticResource MinusPath}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                             Click="OnMinusButtonClick" Style="{StaticResource IconRepeatButtonPrimaryInnerStyle}"
+                                             Height="{TemplateBinding Height, Converter={StaticResource DoubleMultiplierConverter}, ConverterParameter={StaticResource NumberBox.Button.Size.Factor}}"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" Margin="{StaticResource NumberBox.Input.Padding}"/>
+                            <cc:UIIconRepeatButton x:Name="NumberBoxPlusButton" Content="{StaticResource PlusPath}" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                                             Click="OnPlusButtonClick" Style="{StaticResource IconRepeatButtonPrimaryInnerStyle}"
+                                             Height="{TemplateBinding Height, Converter={StaticResource DoubleMultiplierConverter},ConverterParameter={StaticResource NumberBox.Button.Size.Factor}}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                    </Trigger>
+                    <Trigger Property="IsKeyboardFocused" Value="true">
+                        <Setter Property="Effect" TargetName="border" Value="{StaticResource TextBox.Focus.Shadow}"/>
+                        <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+
+            <!-- Style -->
+            <Style x:Key="NumberBoxStyle" TargetType="{x:Type TextBox}">
+                <Setter Property="Template" Value="{StaticResource NumberBoxTemplate}"/>
+                <Setter Property="Height" Value="{StaticResource Field.Height}"/>
+                <Setter Property="BorderThickness" Value="{StaticResource TextBox.BorderThickness}"/>
+                <Setter Property="Foreground" Value="{StaticResource TextBox.Foreground}"/>
+                <Setter Property="Background" Value="{StaticResource TextBox.Background}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource TextBox.BorderBrush}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
+                <Setter Property="FontWeight" Value="Regular"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="4,0"/>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <TextBox x:Name="NumberBoxTextBoxInput" Style="{StaticResource NumberBoxStyle}" TextAlignment="Center"/>
+
+</UserControl>

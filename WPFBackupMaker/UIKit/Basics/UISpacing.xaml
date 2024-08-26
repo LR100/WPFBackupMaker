@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Thickness x:Key="Body.Margin">20, 20, 20, 10</Thickness>
+
+    <sys:Double x:Key="Field.Height">35</sys:Double>
+    <sys:Double x:Key="Field.BorderThicknessValue">1.8</sys:Double>
+    <Thickness x:Key="Field.BorderThickness" Left="{StaticResource Field.BorderThicknessValue}" Top="{StaticResource Field.BorderThicknessValue}" Right="{StaticResource Field.BorderThicknessValue}" Bottom="{StaticResource Field.BorderThicknessValue}"/>
+    <sys:Double x:Key="Field.CornerRadiusValue">4</sys:Double>
+    <CornerRadius x:Key="Field.CornerRadius" TopLeft="{StaticResource Field.CornerRadiusValue}" TopRight="{StaticResource Field.CornerRadiusValue}" BottomRight="{StaticResource Field.CornerRadiusValue}" BottomLeft="{StaticResource Field.CornerRadiusValue}"/>
+
+</ResourceDictionary>

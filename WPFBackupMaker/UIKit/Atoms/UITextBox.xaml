@@ -8,10 +8,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!-- Resources -->
-    <sys:Double x:Key="TextBox.Height">35</sys:Double>
-    <Thickness x:Key="TextBox.BorderThickness">1.8</Thickness>
-    <sys:Double x:Key="TextBox.CornerRadiusValue">4</sys:Double>
-    <CornerRadius x:Key="TextBox.CornerRadius" TopLeft="{StaticResource TextBox.CornerRadiusValue}" TopRight="{StaticResource TextBox.CornerRadiusValue}" BottomRight="{StaticResource TextBox.CornerRadiusValue}" BottomLeft="{StaticResource TextBox.CornerRadiusValue}"/>
+    <Thickness x:Key="TextBox.BorderThickness" Left="{StaticResource Field.BorderThicknessValue}" Top="{StaticResource Field.BorderThicknessValue}" Right="{StaticResource Field.BorderThicknessValue}" Bottom="{StaticResource Field.BorderThicknessValue}"/>
+    <CornerRadius x:Key="TextBox.CornerRadius" TopLeft="{StaticResource Field.CornerRadiusValue}" TopRight="{StaticResource Field.CornerRadiusValue}" BottomRight="{StaticResource Field.CornerRadiusValue}" BottomLeft="{StaticResource Field.CornerRadiusValue}"/>
 
     <SolidColorBrush x:Key="TextBox.Background" Color="{StaticResource Shade100Color}"/>
     <SolidColorBrush x:Key="TextBox.BorderBrush" Color="{StaticResource PrimaryColor}"/>
@@ -46,12 +44,12 @@
     <!-- Style -->
     <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="Template" Value="{StaticResource TextBoxTemplate}"/>
-        <Setter Property="Height" Value="{StaticResource TextBox.Height}"/>
-        <Setter Property="BorderThickness" Value="{StaticResource TextBox.BorderThickness}"/>
+        <Setter Property="Height" Value="{StaticResource Field.Height}"/>
+        <Setter Property="BorderThickness" Value="{StaticResource Field.BorderThickness}"/>
         <Setter Property="Foreground" Value="{StaticResource TextBox.Foreground}"/>
         <Setter Property="Background" Value="{StaticResource TextBox.Background}"/>
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.BorderBrush}"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
+        <Setter Property="FontSize" Value="{StaticResource Field.FontSize}"/>
         <Setter Property="FontWeight" Value="Regular"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="4,0"/>

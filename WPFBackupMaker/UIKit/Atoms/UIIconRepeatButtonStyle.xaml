@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:cc="clr-namespace:WPFBackupMaker.UIKit"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Include Basics -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basics/UIBasics.xaml"/>
+        <ResourceDictionary Source="../Atoms/UIIconButtonStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- BASE Style -->
+    <Style x:Key="IconRepeatButtonBaseStyle" TargetType="{x:Type cc:UIIconRepeatButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="{StaticResource Field.Height}"/>
+        <Setter Property="Template" Value="{StaticResource IconButtonTemplate}"/>
+    </Style>
+    
+    <!-- BASE Inner Style -->
+    <Style x:Key="IconRepeatButtonBaseInnerStyle" TargetType="{x:Type cc:UIIconRepeatButton}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="{StaticResource Field.Height}"/>
+        <Setter Property="Template" Value="{StaticResource IconButtonTemplate}"/>
+    </Style>
+
+
+    <!-- PRIMARY Style -->
+    <Style x:Key="IconRepeatButtonPrimaryStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ButtonPrimary.Background}"/>
+    </Style>
+    <!-- PRIMARY Inner Style -->
+    <Style x:Key="IconRepeatButtonPrimaryInnerStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseInnerStyle}">
+        <Setter Property="Background" Value="{StaticResource ButtonPrimary.Background}"/>
+    </Style>
+
+    <!-- SUCCESS Style -->
+    <Style x:Key="IconRepeatButtonSuccessStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ButtonSuccess.Background}"/>
+    </Style>
+    <!-- SUCCESS Inner Style -->
+    <Style x:Key="IconRepeatButtonSuccessInnerStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseInnerStyle}">
+        <Setter Property="Background" Value="{StaticResource ButtonSuccess.Background}"/>
+    </Style>
+
+    <!-- WARNING Style -->
+    <Style x:Key="IconRepeatButtonWarningStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ButtonWarning.Background}"/>
+    </Style>
+    <!-- WARNING Inner Style -->
+    <Style x:Key="IconRepeatButtonWarningInnerStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseInnerStyle}">
+        <Setter Property="Background" Value="{StaticResource ButtonWarning.Background}"/>
+    </Style>
+
+    <!-- DANGER Style -->
+    <Style x:Key="IconRepeatButtonDangerStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ButtonDanger.Background}"/>
+    </Style>
+    <!-- DANGER Inner Style -->
+    <Style x:Key="IconRepeatButtonDangerInnerStyle" TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonBaseInnerStyle}">
+        <Setter Property="Background" Value="{StaticResource ButtonDanger.Background}"/>
+    </Style>
+
+
+
+    <!-- Set Default Style -->
+    <Style TargetType="{x:Type cc:UIIconRepeatButton}" BasedOn="{StaticResource IconRepeatButtonPrimaryStyle}"/>
+
+
+</ResourceDictionary>

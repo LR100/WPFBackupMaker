@@ -2,10 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:BackupMaker"
-             ShutdownMode="OnExplicitShutdown"
+             
              Startup="Application_Startup"
              Exit="Application_Exit"
              DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <!-- ShutdownMode="OnExplicitShutdown" in Application for tray mode -->
     <Application.Resources>
          <!-- Include UIKit.xaml and UIBasics.xaml -->
         <ResourceDictionary>

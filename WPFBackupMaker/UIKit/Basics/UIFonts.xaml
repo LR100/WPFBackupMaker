@@ -12,11 +12,17 @@
     <sys:Double x:Key="FontSizeHeadline">40</sys:Double>
     <sys:Double x:Key="FontSizeDisplay">48</sys:Double>
     
+    <!-- Fields Font Size-->
+    <sys:Double x:Key="Field.FontSize">18</sys:Double>
+
     <!-- Buttons Font Sizes -->
     <sys:Double x:Key="ButtonFontSizeExtraSmall">10</sys:Double>
     <sys:Double x:Key="ButtonFontSizeSmall">12</sys:Double>
     <sys:Double x:Key="ButtonFontSizeMedium">18</sys:Double>
     <sys:Double x:Key="ButtonFontSizeLarge">22</sys:Double>
     <sys:Double x:Key="ButtonFontSizeExtraLarge">24</sys:Double>
+    
+    <!-- TabItem Font Sizes -->
+    <sys:Double x:Key="TabItemFontSize">20</sys:Double>
 
 </ResourceDictionary>

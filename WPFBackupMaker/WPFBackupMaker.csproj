@@ -10,13 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Config\" />
-    <Folder Include="UIKit\Molecules\" />
+    <Folder Include="Models\Backup\" />
+    <Folder Include="UIKit\Molecules\Controls\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NLog" Version="5.3.3" />
     <PackageReference Include="NLog.Extensions.Logging" Version="5.3.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\UIKitMoleculesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <!-- Copy all config into the -->

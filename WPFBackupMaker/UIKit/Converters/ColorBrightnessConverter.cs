@@ -8,19 +8,11 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-// Use Color as System.Windows.Media.Color
-
-
-
-
-
-
-
 namespace BackupMaker.UIKit.Converters
 {
-    internal class ColorBrightnessConverter : IValueConverter
+    public class ColorBrightnessConverter : IValueConverter
     {
-        private System.Windows.Media.Color ModifyColorBrightness(System.Windows.Media.Color color, double brightness)
+        public static System.Windows.Media.Color ModifyColorBrightness(System.Windows.Media.Color color, double brightness)
         {
             double factor = Math.Clamp(brightness, 0.0, 2.0); // Ensure factor is between 0 and 4
             // Adjust the color's brightness
@@ -30,7 +22,7 @@ namespace BackupMaker.UIKit.Converters
             return System.Windows.Media.Color.FromRgb(r, g, b);
         }
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public static double GetBrightnessFactorFromParameter(object parameter)
         {
             double brightnessFactor = 1.0;
             if (parameter is double factorD)
@@ -44,14 +36,26 @@ namespace BackupMaker.UIKit.Converters
                     brightnessFactor = parsedFactor;
                 }
             }
+            return brightnessFactor;
+        }
+
+        public static System.Windows.Media.Color ModifyColorBrightnessFromParameter(object value, double brightnessFactor)
+        {
             if (value is System.Windows.Media.Color color)
             {
                 return ModifyColorBrightness(color, brightnessFactor);
             }
-            else
+            else if (value is SolidColorBrush brush)
             {
-                return value;
+                return ModifyColorBrightness(brush.Color, brightnessFactor);
             }
+            return Colors.Transparent; // Fallback color if the conversion fails
+        }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            double brightnessFactor = GetBrightnessFactorFromParameter(parameter);
+            return ModifyColorBrightnessFromParameter(value, brightnessFactor);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
